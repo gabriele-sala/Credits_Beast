@@ -1,31 +1,39 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const logo = document.getElementById('dusk-logo');
-    let x = window.innerWidth / 2 - logo.offsetWidth / 2;
-    let y = window.innerHeight / 2 - logo.offsetHeight / 2;
-    let xSpeed = 2, ySpeed = 2;
-    const logoWidth = logo.offsetWidth;
-    const logoHeight = logo.offsetHeight;
+    const logoContainer = document.getElementById('logo-container');
+    createLogo('Dusk moon logo.png');
 
-    function bounceLogo() {
-        // Change direction when hitting the edge
-        if (x + logoWidth > window.innerWidth || x < 0) {
-            xSpeed *= -1;
-        }
-        if (y + logoHeight > window.innerHeight || y < 0) {
-            ySpeed *= -1;
-        }
-
-        // Update the logo's position
-        x += xSpeed;
-        y += ySpeed;
-        logo.style.left = x + 'px';
-        logo.style.top = y + 'px';
-
-        requestAnimationFrame(bounceLogo);
+    function createLogo(src) {
+        const logo = new Image();
+        logo.src = src;
+        logo.className = 'dusk-logo';
+        logo.style.left = `${Math.random() * window.innerWidth}px`;
+        logo.style.top = `${Math.random() * window.innerHeight}px`;
+        logo.onclick = splitLogo;
+        logoContainer.appendChild(logo);
+        bounceLogo(logo);
     }
 
-    bounceLogo();
-});
+    function bounceLogo(logo) {
+        let xSpeed = 2, ySpeed = 2;
 
+        function move() {
+            let x = parseInt(logo.style.left, 10);
+            let y = parseInt(logo.style.top, 10);
+            if (x + logo.width > window.innerWidth || x < 0) xSpeed *= -1;
+            if (y + logo.height > window.innerHeight || y < 0) ySpeed *= -1;
+            logo.style.left = `${x + xSpeed}px`;
+            logo.style.top = `${y + ySpeed}px`;
+            requestAnimationFrame(move);
+        }
+
+        move();
+    }
+
+    function splitLogo(e) {
+        createLogo(this.src);
+        createLogo(this.src);
+        e.stopPropagation(); // Prevent the event from bubbling up
+    }
+});
 
 
