@@ -48,3 +48,4 @@ document.addEventListener("DOMContentLoaded", function() {
     setTimeout(scrollCredits, 2000); // Start after a short delay
 });
 
+
