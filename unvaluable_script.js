@@ -1,13 +1,13 @@
 document.addEventListener("DOMContentLoaded", function() {
     const credits = document.querySelector(".credits");
-    let scrollAmount = 0;
-    const speed = 1; // Adjust speed if needed
+    let scrollAmount = -window.innerHeight;
+    const speed = 1;
 
     function scrollCredits() {
         scrollAmount += speed;
-        credits.style.transform = `translateY(-${scrollAmount}px)`;
+        credits.style.transform = `translateY(${scrollAmount}px) rotateX(25deg)`;
 
-        if (scrollAmount < credits.clientHeight) {
+        if (scrollAmount < credits.clientHeight + window.innerHeight) {
             requestAnimationFrame(scrollCredits);
         }
     }
