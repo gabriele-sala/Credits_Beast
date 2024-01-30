@@ -1,12 +1,13 @@
 document.addEventListener("DOMContentLoaded", function() {
     const logo = document.getElementById('dusk-logo');
-    let x = 0, y = 0;
+    let x = window.innerWidth / 2 - logo.offsetWidth / 2;
+    let y = window.innerHeight / 2 - logo.offsetHeight / 2;
     let xSpeed = 2, ySpeed = 2;
     const logoWidth = logo.offsetWidth;
     const logoHeight = logo.offsetHeight;
 
     function bounceLogo() {
-        // Invert speed when logo hits the edge of the window
+        // Change direction when hitting the edge
         if (x + logoWidth > window.innerWidth || x < 0) {
             xSpeed *= -1;
         }
@@ -14,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
             ySpeed *= -1;
         }
 
-        // Update logo position
+        // Update the logo's position
         x += xSpeed;
         y += ySpeed;
         logo.style.left = x + 'px';
@@ -23,11 +24,8 @@ document.addEventListener("DOMContentLoaded", function() {
         requestAnimationFrame(bounceLogo);
     }
 
-    // Center logo starting position
-    x = (window.innerWidth - logoWidth) / 2;
-    y = (window.innerHeight - logoHeight) / 2;
-
     bounceLogo();
 });
+
 
 
