@@ -3,70 +3,27 @@ body, html {
     padding: 0;
     height: 100%;
     background-color: #0d0d0d; /* Slightly darker background */
-    color: #E8E6E3; /* Light text */
-    font-family: 'Arial', sans-serif;
-}
-
-.title {
-    text-align: center;
-    padding: 20px;
-    color: #F0E14A;
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0% {
-        text-shadow:
-            0 0 5px #FFF,
-            0 0 10px #FFF,
-            0 0 20px #FFF,
-            0 0 30px #F0E14A,
-            0 0 60px #F0E14A;
-    }
-    50% {
-        text-shadow:
-            0 0 2px #FFF,
-            0 0 4px #FFF,
-            0 0 6px #FFF,
-            0 0 10px #F0E14A,
-            0 0 20px #F0E14A;
-    }
-    100% {
-        text-shadow:
-            0 0 5px #FFF,
-            0 0 10px #FFF,
-            0 0 20px #FFF,
-            0 0 30px #F0E14A,
-            0 0 60px #F0E14A;
-    }
-}
-
-.credits-container {
-    position: relative;
-    height: 100%;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    perspective: 500px;
 }
 
-.credits {
+.video-container {
     position: absolute;
+    top: 0;
+    right: 0;
     bottom: 0;
-    width: 80%;
-    text-align: center;
-    transform: rotateX(25deg);
-    transform-origin: bottom center;
-    color: #F0E14A; /* Gold color for credits */
-    font-size: 1.8em;
-    white-space: nowrap;
+    left: 0;
+    z-index: -1;
+}
+
+#background-video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
 }
 
 #dusk-logo {
     position: absolute;
     width: 150px; /* Adjust as needed */
     height: auto;
-    z-index: 10; /* Ensures logo is above other content */
+    z-index: 10; /* Ensures logo is above the video */
 }
-
