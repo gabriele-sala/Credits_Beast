@@ -27,25 +27,24 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Credits roll functionality
     const credits = document.querySelector(".credits");
-    let scrollAmount = -window.innerHeight;
-    let speed = 0.5;
-    const maxSpeed = 2;
-    const acceleration = 0.005;
-
+    let scrollAmount = 0;
+    let direction = 1;
+    let speed = 1.5;
+    let bottomLimit = window.innerHeight - credits.offsetHeight;
+    
     function scrollCredits() {
-        if(speed < maxSpeed) {
-            speed += acceleration;
+        scrollAmount += speed * direction;
+        
+        if (scrollAmount > bottomLimit || scrollAmount < 0) {
+            direction *= -1; // Reverse the direction
         }
         
-        scrollAmount += speed;
-        credits.style.transform = `translateY(${scrollAmount}px) rotateX(25deg)`;
+        credits.style.bottom = `${scrollAmount}px`;
 
-        if (scrollAmount < credits.clientHeight + window.innerHeight) {
-            requestAnimationFrame(scrollCredits);
-        }
+        requestAnimationFrame(scrollCredits);
     }
 
-    setTimeout(scrollCredits, 2000); // Start after a short delay
+    scrollCredits();
 });
 
 
