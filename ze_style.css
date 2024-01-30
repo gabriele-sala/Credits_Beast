@@ -1,0 +1,25 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    color: #fff; /* Change to match Dusk Network palette */
+    background-color: #000; /* Change to match Dusk Network palette */
+    font-family: 'Arial', sans-serif; /* Change to match Dusk Network style */
+}
+
+.credits-container {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.credits {
+    position: relative;
+    width: 80%;
+    text-align: center;
+    transform: perspective(300px) rotateX(25deg);
+    transform-origin: bottom center;
+}
