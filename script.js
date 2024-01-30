@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
     const videoFrame = document.getElementById('video-frame');
     const logoContainer = document.getElementById('logo-container');
-    createLogo('Dusk moon logo.png');
+    createLogo('Dusk moon logo.png', 'dusk-logo', 150);
+    createLogo('dalinar.png', 'dalinar-logo', 150);
 
     document.body.addEventListener('click', function() {
         if (videoFrame.muted) {
@@ -10,19 +11,19 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    function createLogo(src) {
-        const logo = new Image();
+    function createLogo(src, className, size) {
+        const logo = new Image(size, size);
         logo.src = src;
-        logo.className = 'dusk-logo';
+        logo.className = className;
         logo.style.left = `${Math.random() * window.innerWidth}px`;
         logo.style.top = `${Math.random() * window.innerHeight}px`;
-        logo.onclick = splitLogo;
+        logo.onclick = function(e) { splitLogo(e, className, size); };
         logoContainer.appendChild(logo);
         bounceLogo(logo);
     }
 
     function bounceLogo(logo) {
-        let xSpeed = 2, ySpeed = 2;
+        let xSpeed = 2 + Math.random() * 3, ySpeed = 2 + Math.random() * 3;
 
         function move() {
             let x = parseInt(logo.style.left, 10);
@@ -37,9 +38,14 @@ document.addEventListener("DOMContentLoaded", function() {
         move();
     }
 
-    function splitLogo(e) {
-        createLogo(this.src);
-        createLogo(this.src);
+    function splitLogo(e, className, size) {
+        // Reduce size by half for each split
+        size = size / 2;
+        if (size >= 30) { // Set a minimum size to prevent logos from getting too small
+            createLogo(e.target.src, className, size);
+            createLogo(e.target.src, className, size);
+        }
         e.stopPropagation(); // Prevent the event from bubbling up
     }
 });
+
