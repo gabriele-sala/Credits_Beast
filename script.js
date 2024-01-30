@@ -1,6 +1,14 @@
 document.addEventListener("DOMContentLoaded", function() {
+    const videoFrame = document.getElementById('video-frame');
     const logoContainer = document.getElementById('logo-container');
     createLogo('Dusk moon logo.png');
+
+    document.body.addEventListener('click', function() {
+        if (videoFrame.muted) {
+            videoFrame.muted = false;
+            videoFrame.play();
+        }
+    });
 
     function createLogo(src) {
         const logo = new Image();
@@ -35,5 +43,3 @@ document.addEventListener("DOMContentLoaded", function() {
         e.stopPropagation(); // Prevent the event from bubbling up
     }
 });
-
-
