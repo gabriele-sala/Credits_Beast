@@ -34,3 +34,10 @@ body, html {
     white-space: nowrap;
 }
 
+#dusk-logo {
+    position: absolute;
+    width: 150px; /* Adjust as needed */
+    height: auto;
+    z-index: 10; /* Ensures logo is above other content */
+}
+
