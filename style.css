@@ -2,7 +2,7 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    background-color: #1A1A1A; /* Dark background */
+    background-color: #0d0d0d; /* Slightly darker background */
     color: #E8E6E3; /* Light text */
     font-family: 'Arial', sans-serif;
 }
@@ -10,16 +10,35 @@ body, html {
 .title {
     text-align: center;
     padding: 20px;
-    color: #F0E14A; /* Accent color */
-    text-shadow:
-        0 0 5px #FFF,
-        0 0 10px #FFF,
-        0 0 20px #FFF,
-        0 0 40px #F0E14A,
-        0 0 80px #F0E14A,
-        0 0 90px #F0E14A,
-        0 0 100px #F0E14A,
-        0 0 150px #F0E14A;
+    color: #F0E14A;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        text-shadow:
+            0 0 5px #FFF,
+            0 0 10px #FFF,
+            0 0 20px #FFF,
+            0 0 30px #F0E14A,
+            0 0 60px #F0E14A;
+    }
+    50% {
+        text-shadow:
+            0 0 2px #FFF,
+            0 0 4px #FFF,
+            0 0 6px #FFF,
+            0 0 10px #F0E14A,
+            0 0 20px #F0E14A;
+    }
+    100% {
+        text-shadow:
+            0 0 5px #FFF,
+            0 0 10px #FFF,
+            0 0 20px #FFF,
+            0 0 30px #F0E14A,
+            0 0 60px #F0E14A;
+    }
 }
 
 .credits-container {
@@ -33,7 +52,8 @@ body, html {
 }
 
 .credits {
-    position: relative;
+    position: absolute;
+    bottom: 0;
     width: 80%;
     text-align: center;
     transform: rotateX(25deg);
@@ -49,5 +69,4 @@ body, html {
     height: auto;
     z-index: 10; /* Ensures logo is above other content */
 }
-
 
