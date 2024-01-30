@@ -2,9 +2,15 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    color: #E8E6E3; /* Dusk-like light color */
-    background-color: #0A0A0A; /* Dusk-like dark background */
+    background-color: #1A1A1A; /* Dark background */
+    color: #E8E6E3; /* Light text */
     font-family: 'Arial', sans-serif;
+}
+
+.title {
+    text-align: center;
+    padding: 20px;
+    color: #F0E14A; /* Accent color */
 }
 
 .credits-container {
@@ -14,16 +20,17 @@ body, html {
     display: flex;
     align-items: center;
     justify-content: center;
-    perspective: 400px;
+    perspective: 500px;
 }
 
 .credits {
     position: relative;
-    width: 60%;
+    width: 80%;
     text-align: center;
     transform: rotateX(25deg);
-    transform-origin: 100% 100%;
-    color: #F0E14A; /* Star Wars-like gold color */
-    font-size: 1.5em;
+    transform-origin: bottom center;
+    color: #F0E14A; /* Gold color for credits */
+    font-size: 1.8em;
     white-space: nowrap;
 }
+
