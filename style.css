@@ -2,28 +2,29 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    background-color: #0d0d0d; /* Slightly darker background */
     overflow: hidden;
-}
-
-.video-container {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
+    background-color: #0d0d0d; /* Slightly darker background for better contrast */
 }
 
 #background-video {
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1000;
+    background-size: cover;
 }
 
 #dusk-logo {
     position: absolute;
     width: 150px; /* Adjust as needed */
     height: auto;
-    z-index: 10; /* Ensures logo is above the video */
+    z-index: 1000; /* Ensures logo is above other content */
+    top: 50%; /* Center the logo vertically */
+    left: 50%; /* Center the logo horizontally */
+    transform: translate(-50%, -50%); /* Center the logo exactly */
 }
+
