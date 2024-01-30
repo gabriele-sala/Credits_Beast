@@ -10,11 +10,10 @@ body, html {
 }
 
 #video-container {
-    width: 50vw; /* 50% of the viewport width */
+    width: 60vw; /* Increased to 60% of the viewport width */
     height: 50vh; /* 50% of the viewport height */
     position: relative;
     overflow: hidden;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6); /* Optional: adds a glow effect */
 }
 
 #video-frame {
@@ -23,13 +22,9 @@ body, html {
     object-fit: cover;
 }
 
-#dusk-logo {
+.dusk-logo {
     position: absolute;
-    width: 150px; /* Adjust as needed */
-    height: auto;
-    z-index: 10;
-    /* Logo will start in the center and move from there */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    width: 100px; /* Smaller logos for more space */
+    cursor: pointer; /* Indicates the logo is clickable */
 }
+
