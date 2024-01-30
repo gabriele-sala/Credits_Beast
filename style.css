@@ -11,6 +11,15 @@ body, html {
     text-align: center;
     padding: 20px;
     color: #F0E14A; /* Accent color */
+    text-shadow:
+        0 0 5px #FFF,
+        0 0 10px #FFF,
+        0 0 20px #FFF,
+        0 0 40px #F0E14A,
+        0 0 80px #F0E14A,
+        0 0 90px #F0E14A,
+        0 0 100px #F0E14A,
+        0 0 150px #F0E14A;
 }
 
 .credits-container {
@@ -40,4 +49,5 @@ body, html {
     height: auto;
     z-index: 10; /* Ensures logo is above other content */
 }
+
 
