@@ -24,27 +24,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     bounceLogo();
-
-    // Credits roll functionality
-    const credits = document.querySelector(".credits");
-    let scrollAmount = 0;
-    let direction = 1;
-    let speed = 1.5;
-    let bottomLimit = window.innerHeight - credits.offsetHeight;
-    
-    function scrollCredits() {
-        scrollAmount += speed * direction;
-        
-        if (scrollAmount > bottomLimit || scrollAmount < 0) {
-            direction *= -1; // Reverse the direction
-        }
-        
-        credits.style.bottom = `${scrollAmount}px`;
-
-        requestAnimationFrame(scrollCredits);
-    }
-
-    scrollCredits();
 });
 
 
