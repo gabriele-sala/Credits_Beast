@@ -3,22 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enhanced Credits Roll</title>
+    <title>Video Background with Bouncing Logo</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="title">
-        <h1>Unvaluable Heroes</h1>
-        <p>A Journey into the Mainnet</p>
-    </div>
-    <div class="credits-container">
-        <div class="credits">
-            <p>Holy Leader - Dalinar</p>
-            <p>Ze Marketing - Bogdan</p>
-            <!-- More credits -->
-        </div>
+    <div class="video-container">
+        <video autoplay loop muted id="background-video">
+            <source src="background.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
     <img src="Dusk moon logo.png" alt="Dusk Logo" id="dusk-logo">
     <script src="script.js"></script>
 </body>
 </html>
+
