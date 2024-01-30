@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Video Background with Bouncing Logo</title>
-    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <video autoplay loop muted id="background-video">
+<body style="margin: 0; padding: 0; height: 100%; overflow: hidden; background-color: #0d0d0d;">
+    <video autoplay loop muted playsinline style="position: fixed; right: 0; bottom: 0; min-width: 100%; min-height: 100%; width: auto; height: auto; z-index: -1;" id="background-video">
         <source src="background.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
-    <img src="Dusk moon logo.png" alt="Dusk Logo" id="dusk-logo">
+    <img src="Dusk moon logo.png" alt="Dusk Logo" id="dusk-logo" style="position: absolute; width: 150px; height: auto; z-index: 10; top: 50%; left: 50%; transform: translate(-50%, -50%);">
     <script src="script.js"></script>
 </body>
 </html>
